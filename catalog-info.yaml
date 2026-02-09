@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name:  helloworld-techdocs-002
+  description: Hello Worldサービスです
+  labels:
+    app: helloworld-techdocs-002
+  links:
+    - url: https://github.com/rhdh-practice/helloworld-techdocs-002 
+      title: App Repository
+      icon: github
+  annotations:
+    backstage.io/kubernetes-label-selector: 'app=helloworld-techdocs-002'
+    backstage.io/kubernetes-namespace: helloworld-techdocs-002
+    argocd/app-selector: app.kubernetes.io/instance=helloworld-techdocs-002-init
+    backstage.io/techdocs-ref: url:https://github.com/rhdh-practice/helloworld-techdocs-002
+    github.com/project-slug: rhdh-practice/helloworld-techdocs-002
+spec:
+  type: website
+  owner: user:default/skitamura7446
+  lifecycle: production

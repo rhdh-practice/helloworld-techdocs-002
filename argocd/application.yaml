@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helloworld-techdocs-002
+  namespace: openshift-gitops
+spec:
+  project: default 
+  source:
+    repoURL: https://github.com/rhdh-practice/helloworld-techdocs-002.git
+    targetRevision: develop
+    path: ./manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: helloworld-techdocs-002
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+    - RespectIgnoreDifferences=true
+    - ApplyOutOfSyncOnly=true
+    retry:
+      limit: 10
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 5m

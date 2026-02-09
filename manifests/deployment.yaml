@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: helloworld-techdocs-002
+  name: helloworld-techdocs-002
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld-techdocs-002
+  template:
+    metadata:
+      labels:
+        app: helloworld-techdocs-002
+    spec:
+      containers:
+      - image: quay.io/skitamur/hello-world:latest 
+        name: helloworld-techdocs-002
+        ports:
+        - containerPort: 3000
+          protocol: TCP

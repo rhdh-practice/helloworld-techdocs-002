@@ -1,0 +1,19 @@
+site_name: helloworld-techdocs-002
+site_description: 
+repo_url: https://github.com/rhdh-practice/helloworld-techdocs-002
+edit_uri: edit/main/techdocs/docs
+
+plugins:
+  - techdocs-core
+
+theme:
+  name: material
+  font:
+    text:
+      - "Arial"
+      - "Helvetica"
+      - "sans-serif"
+
+# Note for content editors, edit only the section below
+#nav:
+#  - helloworld-techdocs-002 Documentation: index.md
